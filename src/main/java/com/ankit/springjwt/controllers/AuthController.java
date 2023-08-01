@@ -146,13 +146,14 @@ public class AuthController {
     }
 
     user.setRoles(roles);
-    user.setConfirmationToken(UUID.randomUUID().toString());
+   // user.setConfirmationToken(UUID.randomUUID().toString());
+	    user.setConfirmationToken("Otp@1234");
     user.setContactNo(signUpRequest.getContactNo());
     user.setIsenabled(Boolean.FALSE);
     user.setReferalCode(signUpRequest.getReferalCode());
     userRepository.save(user);
     
-    Mail mail = new Mail();
+  /*  Mail mail = new Mail();
 	mail.setMailFrom("xyz");
 	System.out.println("reached here");
 	mail.setMailTo(user.getEmail());
@@ -160,7 +161,7 @@ public class AuthController {
 	mail.setMailContent("To confirm you email-address, please copy and paste below token on portal:\n"
 			+"token=" + user.getConfirmationToken());
 	
-	mailService.sendEmail(mail);
+	mailService.sendEmail(mail); */
 
    // return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     //List<String> roles1 = new ArrayList<>();
